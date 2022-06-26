@@ -5,7 +5,7 @@ jobs:
       runs-on: ubuntu-latest
 	    steps:
          - run: date
-   windows:
+windows:
      runs-on: windows-latest
         steps:
          - run: date
