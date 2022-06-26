@@ -2,21 +2,21 @@ name:complex
 on:push
 jobs:
   ubumtu:
-      runs-on:ubumtu-latest
-	    steps:
-    - run:date
-  windows
-	   runs-on:windows-latest
-	   steps:
-	  - run:date
+      runs-on: ubuntu-latest
+	 steps:
+        - run: date
+  windows:
+	   runs-on: windows-latest
+	  steps:
+	 - run: date
   macos:
-    runs-on:macos-latest
+    runs-on: macos-latest
 	  steps:
-	 - run:date
+	 - run: date
   depends:
-    needs:[ubumtu, windows, macos]
+    needs: [ubuntu, windows, macos]
 	  steps:
-	 - run:date
+	 - run: date
 - name: YAML Lint
   # You may pin to the exact commit or the version.
   # uses: ibiqlik/action-yamllint@81e214fd484713882ce4237cb7cd264d550856cf
