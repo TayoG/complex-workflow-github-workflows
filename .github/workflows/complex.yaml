@@ -1,36 +1,20 @@
 name: complex
 on: push
 jobs:
-  ubumtu:
-     runs-on: ubuntu-latest
-	   steps:
-         - run: date
-windows:
+ ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+          - run: date
+ windows:
      runs-on: windows-latest
-        steps:
-         - run: date
-  macos:
-    runs-on: macos-latest
-	     steps:
-	     - run: date
-  depends:
-    needs: [ubuntu, windows, macos]
-	   steps:
-	     - run: date
-- name: YAML Lint
-  # You may pin to the exact commit or the version.
-  # uses: ibiqlik/action-yamllint@81e214fd484713882ce4237cb7cd264d550856cf
-  uses: ibiqlik/action-yamllint@v3.1.0
-  with:
-    # File(s) or Directory, separate by space if multiple files or folder are specified
-    file_or_dir: # optional
-    # Path to custom configuration
-    config_file: # optional
-    # Custom configuration (as YAML source)
-    config_data: # optional
-    # Format for parsing output [parsable,standard,colored,github,auto]
-    format: # optional, default is parsable
-    # Return non-zero exit code on warnings as well as errors
-    strict: # optional, default is false
-    # Output only error level problems
-    no_warnings: # optional, default is false
+     steps:
+          - run: date
+ macos:
+      runs-on: macos-latest
+      steps:
+      - run: date
+ depends:
+      needs: [ubuntu, windows, macos]
+      runs-on: macos-latest
+      steps:
+       - run: date
